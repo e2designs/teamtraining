@@ -1,5 +1,5 @@
 const path = require('path');
-const last = require(path.join(__dirname, '/main.js'));
+
 
 class mocked_log{
     error(msg) {
@@ -11,11 +11,12 @@ class mocked_log{
 };
 const log = new mocked_log();
 
+global.log =  log
+const last = require(path.join(__dirname, '/main.js'));
 
 function test_last() {
     const myname = new last('Hi', 'From Test')
     myname.name.print_hi();
     myname.print_full();
 };
-module.exports(log);
 test_last();
