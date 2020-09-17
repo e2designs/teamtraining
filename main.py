@@ -16,8 +16,12 @@ class Name:
         return False
 
     def print_hi(self):
-        # Use a breakpoint in the code line below to debug your script.
-        print(f'Hi, {self.name}')  # Press ⌘F8 to toggle the breakpoint.
+        if self.check_name():
+            msg = f'Hi, {self.name}'
+            print(msg)
+            return msg
+        else:
+            return None
 
 
 # Press the green button in the gutter to run the script.

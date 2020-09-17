@@ -22,10 +22,16 @@ def test_check_name_fail():
     response = name.check_name()
     assert not response, "Response did not equal False"
 
-def test_check_name_print(capfd):
-    # Use capfd
-    assert False
+def test_check_name_print():
+    myname = "Somename"
+    name = Name(name=myname)
+    result = name.print_hi()
+    expect = f"Hi, {myname}"
+    assert result == expect
 
-def test_check_name_no_print(capfd):
-    # Use capfd but negative.
-    assert False
+def test_check_name_no_print():
+    myname = 4444444444
+    name = Name(name=myname)
+    result = name.print_hi()
+    expect = None
+    assert result == expect
