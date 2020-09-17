@@ -15,6 +15,7 @@ class last {
         this.last = last;
     }
     print_full() {
+        log.error("Calling some Error log")
         console.log(`${this.first}, ${this.last}`);
     }
 }
@@ -30,4 +31,6 @@ try {
 } catch(error){
     console.log(`There was an Error:\n${error}`)
 }
+
+module.exports = last;
 
