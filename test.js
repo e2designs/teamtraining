@@ -12,8 +12,8 @@ class mocked_log{
 const log = new mocked_log();
 
 global.log =  log
-const last = require(path.join(__dirname, '/main.js'));
 
+const last = require(path.join(__dirname, '/main.js'));
 function test_last() {
     const myname = new last('Hi', 'From Test')
     myname.name.print_hi();
